@@ -1,0 +1,25 @@
+{{#if @blog.navigation}}
+    <a class="menu-button fa fa-bars" href="#"><span class="word">Menu</span></a>
+{{/if}}
+<div class="nav" style="background-image: url({{asset "images/nav-background.jpg"}});">
+    <img class="nav-profile-iamge" src="{{asset "images/adam.jpg"}}">
+    <h3 class="nav-title">Adam Miller</h3>
+    <div class="social-links">
+      <a class="social-button fa fa-linkedin" href="https://www.linkedin.com/in/adammillerlinkedin" target="_blank">LinkedIn</a>
+      <a class="social-button fa fa-github" href="https://www.github.com/epicmiller" target="_blank">GitHub</a>
+      <a class="social-button fa fa-twitter" href="https://www.twitter.com/millea9" target="_blank">Twitter</a>
+      <a class="social-button fa fa-rss" href="{{@blog.url}}/rss/" target="_blank">RSS</a>
+    </div>
+
+    <p class="nav-personal-description">I'm a <span class="orange-text" >Senior Frontend UI Engineer</span> at <span style="color: #0077b5;">LinkedIn</span> orchestrating a small team of ace developers to push the boundaries of our <span class="red-text">frontend frameworks</span>. In my free time, I work on <span class="green-text">other cool projects</span>!</p>
+
+    <a href="#" class="nav-close">
+        <span class="hidden">Close</span>
+    </a>
+    <ul>
+        {{#foreach navigation}}
+            <li class="nav-{{slug}}{{#if current}} nav-current{{/if}}" role="presentation"><a href="{{url absolute="true"}}">{{label}}</a></li>
+        {{/foreach}}
+    </ul>
+</div>
+<span class="nav-cover"></span>
